@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const LoginPage = ({
   handleLogin,
@@ -33,6 +34,10 @@ const LoginPage = ({
         <button className='login-button' type='submit'>
           Login
         </button>
+        <div>
+          <b>New user? Register an account here</b>
+          <Link to='/users/register'>Register</Link>
+        </div>
       </form>
     </div>
   );

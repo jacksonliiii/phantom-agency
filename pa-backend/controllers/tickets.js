@@ -21,7 +21,7 @@ ticketsRouter.get("/:id", async (request, response) => {
 });
 
 ticketsRouter.post("/", userExtractor, async (request, response) => {
-  const { number, type, description } = request.body;
+  const { type, description } = request.body;
   const user = request.user;
 
   if (!user) {
@@ -29,7 +29,7 @@ ticketsRouter.post("/", userExtractor, async (request, response) => {
   }
 
   const ticket = new Ticket({
-    number,
+    number: Math.floor(Math.random() * 9000) + 1000,
     type,
     description,
     user: user.id,

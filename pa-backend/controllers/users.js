@@ -13,24 +13,25 @@ usersRouter.get("/", async (request, response) => {
   response.json(users);
 });
 
-usersRouter.post("/", async (request, response) => {
-  const { username, name, password } = request.body;
+usersRouter.post("/register", async (request, response) => {
+  const minPasswordLength = 8;
+  const { newUsername, newName, newPassword } = request.body;
 
-  if (password === "") {
+  if (newPassword === "") {
     response.status(400).send({ error: "Please fill in the `password` field" });
   }
-  if (password.length < 8) {
+  if (newPassword.length < minPasswordLength) {
     response
       .status(400)
       .send({ error: "`password` has to be at least 8 characters long" });
   }
 
   const saltRounds = 10;
-  const passwordHash = await bcrypt.hash(password, saltRounds);
+  const passwordHash = await bcrypt.hash(newPassword, saltRounds);
 
   const user = new User({
-    username,
-    name,
+    username: newUsername,
+    name: newName,
     passwordHash,
   });
 

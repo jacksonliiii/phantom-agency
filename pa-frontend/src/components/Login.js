@@ -4,14 +4,14 @@ import LoginPage from "../pages/login";
 import loginService from "../services/login";
 import ticketService from "../services/ticket";
 
-// import { useUserDispatch } from "./contexts/UserContext";
+import { useUserDispatch } from "./contexts/UserContext";
 // import { useNotificationDispatch } from "./contexts/NotificationContext";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  // const userDispatch = useUserDispatch();
+  const userDispatch = useUserDispatch();
   // const notificationDispatch = useNotificationDispatch();
 
   const handleLogin = async (event) => {
@@ -25,7 +25,7 @@ const Login = () => {
       window.localStorage.setItem("loggedUser", JSON.stringify(user));
 
       ticketService.setToken(user.token);
-      // userDispatch(user);
+      userDispatch(user);
       setUsername("");
       setPassword("");
     } catch (error) {
