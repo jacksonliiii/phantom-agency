@@ -1,14 +1,24 @@
-.nav-link {
-  font-size: 18px;
-  font-weight: 600;
+.title {
   color: white;
-  transition: color 0.25s;
+  font-size: 30px;
+  margin-right: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
-.nav-link:hover {
-  color: #00e8fc;
+.nav-link {
+  font-size: 18px;
+  font-weight: 550;
+  color: white;
+  transition: color 0.25s;
 }
 
 .dropdown-button {
   color: white;
 }
+
+.nav-link:hover,
+.dropdown-button:hover {
+  color: #00e8fc;
+}
+

@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar";
 import AboutPage from "./pages/about";
 import HomePage from "./pages/home";
 import CareersPage from "./pages/careers";
+import Ticket from "./components/Ticket";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Footer from "./components/Footer";
@@ -22,6 +23,7 @@ const App = () => {
           <Route path='/' element={<HomePage />} />
           <Route path='/about' element={<AboutPage />} />
           <Route path='/careers' element={<CareersPage />} />
+          <Route path='/requests/new' element={<Ticket />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
         </Routes>

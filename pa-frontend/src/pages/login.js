@@ -1,7 +1,5 @@
 import React from "react";
 
-import "../css/login.css";
-
 const LoginPage = ({
   handleLogin,
   username,
@@ -11,7 +9,6 @@ const LoginPage = ({
 }) => {
   return (
     <div className='login-container'>
-      <h1>Welcome to Phantom Agency!</h1>
       <form onSubmit={handleLogin}>
         <div>
           <b>Username</b>
