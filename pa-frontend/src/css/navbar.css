@@ -1,0 +1,14 @@
+.nav-link {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  transition: color 0.25s;
+}
+
+.nav-link:hover {
+  color: #00e8fc;
+}
+
+.dropdown-button {
+  color: white;
+}

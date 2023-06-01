@@ -1,11 +1,18 @@
 import { useState } from "react";
 
-import loginService from '../services/login'
-import ticketService from '../services/ticket'
+import LoginPage from "../pages/login";
+import loginService from "../services/login";
+import ticketService from "../services/ticket";
+
+// import { useUserDispatch } from "./contexts/UserContext";
+// import { useNotificationDispatch } from "./contexts/NotificationContext";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  // const userDispatch = useUserDispatch();
+  // const notificationDispatch = useNotificationDispatch();
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -18,42 +25,22 @@ const Login = () => {
       window.localStorage.setItem("loggedUser", JSON.stringify(user));
 
       ticketService.setToken(user.token);
-      // setUser(user);
+      // userDispatch(user);
       setUsername("");
       setPassword("");
     } catch (error) {
-      // notifyWith("Wrong username or password", "error");
-      console.log(error);
+      // notificationDispatch(error);
     }
   };
 
   return (
-    <div className="container mx-auto bg-gray-200 rounded-xl shadow border p-8 m-10">
-      <h1>Welcome to Phantom Agency!</h1>
-      <form onSubmit={handleLogin}>
-        <div>
-          <b>Username</b>
-          <input
-            type='text'
-            value={username}
-            name='username'
-            onChange={({ target }) => setUsername(target.value)}
-            id='username'
-          />
-        </div>
-        <div>
-          <b>Password</b>
-          <input
-            type='text'
-            value={password}
-            name='password'
-            onChange={({ target }) => setPassword(target.value)}
-            id='password'
-          />
-        </div>
-        <button type='submit'>Login</button>
-      </form>
-    </div>
+    <LoginPage
+      handleLogin={handleLogin}
+      username={username}
+      password={password}
+      handleUsername={({ target }) => setUsername(target.value)}
+      handlePassword={({ target }) => setPassword(target.value)}
+    />
   );
 };
 
