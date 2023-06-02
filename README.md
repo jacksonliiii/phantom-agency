@@ -28,3 +28,7 @@ The following technologies and tools are used in this web application:
   - As a user, I can sort comments by type
   - As a user, I can add picture attachments to my ticket
   - As a user, I can see an estimated time for my ticket to be resolved
+
+## BUGS
+- When logged in and on 'Submit a ticket' page
+  - Refreshing the page causes the login page to load again 
