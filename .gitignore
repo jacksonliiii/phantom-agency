@@ -134,6 +134,7 @@ requests
 
 # production
 /build
+.npmrc
 
 # # FROM CREATE-REACT-APP GENERATED
 # # dependencies
