@@ -1,5 +1,5 @@
 const ticketsRouter = require("express").Router();
-const Ticket = require("../models/Ticket");
+const Ticket = require("../models/ticket");
 const { userExtractor } = require("../utils/middleware");
 
 ticketsRouter.get("/", async (request, response) => {
