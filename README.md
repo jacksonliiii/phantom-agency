@@ -16,7 +16,7 @@ The following technologies and tools are used in this web application:
 - Frontend: HTML, CSS, JavaScript, React.js
 - Backend: Node.js, Express.js, Mongoose
 - Database: MongoDB
-- Other dependencies: bcrypt, cors, jsonwebtoken
+- Other dependencies: bcrypt, cors, jsonwebtoken, react-router-dom, react-query
 
 ## TODO
 
