@@ -13,7 +13,18 @@ Welcome to **Phantom Agency**! This repository contains a web application that a
 
 The following technologies and tools are used in this web application:
 
-- Frontend: HTML, CSS, JavaScript
-- Backend: [Node.js, Express.jS, mongoose]
-- Database: [MongoDB]
-- Other dependencies: [bcrypt, cors, jsonwebtoken]
+- Frontend: HTML, CSS, JavaScript, React.js
+- Backend: Node.js, Express.js, Mongoose
+- Database: MongoDB
+- Other dependencies: bcrypt, cors, jsonwebtoken
+
+## TODO
+
+- Improve User Credential functionality
+-- Add password strength check
+
+- Improve Ticket functionality
+-- As a user I can like tickets
+-- As a user I can sort comments by type
+-- As a user I can add picture attachments to my ticket
+-- As a user I can see an estimated time for my ticket to be resolved
