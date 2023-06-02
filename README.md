@@ -21,10 +21,10 @@ The following technologies and tools are used in this web application:
 ## TODO
 
 - Improve User Credential functionality
--- Add password strength check
+  - Add password strength check
 
 - Improve Ticket functionality
--- As a user I can like tickets
--- As a user I can sort comments by type
--- As a user I can add picture attachments to my ticket
--- As a user I can see an estimated time for my ticket to be resolved
+  - As a user, I can like tickets
+  - As a user, I can sort comments by type
+  - As a user, I can add picture attachments to my ticket
+  - As a user, I can see an estimated time for my ticket to be resolved
