@@ -58,7 +58,7 @@ const TicketPage = ({ createTicket }) => {
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             />
           </div>
-          <button type="submit">Submit Ticket</button>
+          <button className="submit-ticket-button" type="submit">Submit Ticket</button>
         </form>
       </div>
     </div>

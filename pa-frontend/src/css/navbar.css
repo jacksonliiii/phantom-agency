@@ -5,6 +5,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
+  width: 100%;
+  top: 0;
 }
 
 .navbar-brand {
@@ -13,7 +16,12 @@
   font-size: 1.7rem;
   font-weight: bold;
   margin-left: 2rem;
+  background: linear-gradient(to bottom, white, white 55%, gray);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
 
 .nav-title {
   margin-top: 0.4rem;
@@ -35,7 +43,7 @@
   color: white;
   text-decoration: none;
   padding: 0.5rem;
-  transition: color 0.3s ease;
+  transition: color 0.5s ease;
 }
 
 .nav-link:hover {

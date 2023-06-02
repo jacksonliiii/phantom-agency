@@ -37,19 +37,13 @@ const LoginPage = ({
             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
           />
         </div>
-        <button
-          className="login-button"
-          type="submit"
-        >
+        <button className="login-button" type="submit">
           Login
         </button>
         <div className="mt-4">
           <span className="text-lg">
             New user?{" "}
-            <Link
-              to="/users/register"
-              className="register-link underline"
-            >
+            <Link to="/users/register" className="register-link underline">
               Register an account here
             </Link>
           </span>

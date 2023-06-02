@@ -66,7 +66,7 @@ const App = () => {
         <div>
           <NavBar handleLogout={handleLogout} user={userValue} />
         </div>
-        <div>
+        <div className="main">
           <Routes>
             <Route path='/' element={<HomePage />} />
             <Route path='/about' element={<AboutPage />} />

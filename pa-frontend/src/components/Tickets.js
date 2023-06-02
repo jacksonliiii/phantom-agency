@@ -17,7 +17,7 @@ const Tickets = () => {
     <div className="flex justify-center">
       <div className="w-3/4">
         <h1 className="text-center text-3xl font-bold mb-4 border-b-2 pb-2">
-          All Tickets
+          ALL TICKETS
         </h1>
         <div className="ticket-table border rounded-lg overflow-hidden">
           <table className="w-full">
@@ -25,7 +25,7 @@ const Tickets = () => {
               {tickets.map((ticket) => (
                 <tr key={ticket.id}>
                   <td>
-                    <b className="uppercase">{ticket.type}</b> {ticket.description}
+                    <b className="uppercase">{ticket.type}:</b> {ticket.description}
                   </td>
                 </tr>
               ))}

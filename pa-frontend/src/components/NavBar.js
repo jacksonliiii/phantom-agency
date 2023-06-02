@@ -5,6 +5,7 @@ import { useNotificationDispatch } from "./contexts/NotificationContext";
 import ghostIcon from "../images/ghost.png";
 
 const NavBar = ({ handleLogout, user }) => {
+
   const userValue = useUserValue();
   const notificationDispatch = useNotificationDispatch();
 
@@ -43,10 +44,10 @@ const NavBar = ({ handleLogout, user }) => {
 
   return (
     <div>
-      <nav className='navbar shadow'>
+      <nav className='navbar'>
         <div className='navbar-brand'>
           <img src={ghostIcon} className='navbar-icon' alt='ghost icon' />
-          <p className='nav-title'>Phantom Agency</p>
+          <p className='nav-title ml-1'>Phantom Agency</p>
         </div>
         <div className='navbar-links'>
           <Link to='/' className='nav-link'>

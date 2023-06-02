@@ -7,56 +7,52 @@ const RegisterPage = ({
   handleNewUsernameChange,
   handleNewNameChange,
   handleNewPasswordChange,
-  handleRegister
+  handleRegister,
 }) => {
   return (
-    <div className="flex justify-center items-center h-screen">
-      <form className="register-form" onSubmit={handleRegister}>
-        <div className="mb-4">
-          <label htmlFor="newUsername" className="text-lg font-bold mb-2">
+    <div className='flex justify-center items-center h-screen'>
+      <form className='register-form' onSubmit={handleRegister}>
+        <p className='register-title'>Register your Account</p>
+        <div className='mb-4'>
+          <label htmlFor='newUsername' className='text-lg font-bold mb-2'>
             Create a Username
           </label>
           <input
-            type="text"
+            type='text'
             value={newUsername}
-            name="newUsername"
+            name='newUsername'
             onChange={handleNewUsernameChange}
-            id="newUsername"
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+            id='newUsername'
+            className='w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300'
           />
         </div>
-        <div className="mb-4">
-          <label htmlFor="newName" className="text-lg font-bold mb-2">
+        <div className='mb-4'>
+          <label htmlFor='newName' className='text-lg font-bold mb-2'>
             Enter your Name
           </label>
           <input
-            type="text"
+            type='text'
             value={newName}
-            name="newName"
+            name='newName'
             onChange={handleNewNameChange}
-            id="newName"
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+            id='newName'
+            className='w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300'
           />
         </div>
-
-        <div className="mb-4">
-          <label htmlFor="newPassword" className="text-lg font-bold mb-2">
+        <div className='mb-4'>
+          <label htmlFor='newPassword' className='text-lg font-bold mb-2'>
             Set a Password
           </label>
           <input
-            type="password"
+            type='password'
             value={newPassword}
-            name="newPassword"
+            name='newPassword'
             onChange={handleNewPasswordChange}
-            id="newPassword"
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+            id='newPassword'
+            className='w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300'
           />
         </div>
-        <button
-          id="register-button"
-          className="register-button"
-          type="submit"
-        >
+        <button id='register-button' className='register-button' type='submit'>
           Register
         </button>
       </form>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import LoginPage from "../pages/login";
 import loginService from "../services/login";
@@ -11,26 +12,34 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
   const userDispatch = useUserDispatch();
   const notificationDispatch = useNotificationDispatch();
 
   const handleLogin = async (event) => {
     event.preventDefault();
-
-    try {
-      const user = await loginService.login({
-        username,
-        password,
+    if (!username || !password) {
+      notificationDispatch({
+        message: "Credentials incorrect",
+        type: "failure",
       });
-      window.localStorage.setItem("loggedUser", JSON.stringify(user));
+    } else {
+      try {
+        const user = await loginService.login({
+          username,
+          password,
+        });
+        window.localStorage.setItem("loggedUser", JSON.stringify(user));
 
-      ticketService.setToken(user.token);
-      userDispatch(user);
-      setUsername("");
-      setPassword("");
-      notificationDispatch({ message: "Logged in", type: "success" });
-    } catch (error) {
-      notificationDispatch({ message: error, type: "failure" });
+        ticketService.setToken(user.token);
+        userDispatch(user);
+        setUsername("");
+        setPassword("");
+        navigate("/");
+        notificationDispatch({ message: "Logged in", type: "success" });
+      } catch (error) {
+        notificationDispatch({ message: "Credentials incorrect", type: "failure" });
+      }
     }
   };
 

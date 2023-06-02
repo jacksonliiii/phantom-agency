@@ -1,12 +1,18 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import RegisterPage from "../pages/register";
 import userService from "../services/user";
+
+import { useNotificationDispatch } from "./contexts/NotificationContext";
 
 const Register = () => {
   const [newUsername, setNewUsername] = useState("");
   const [newName, setNewName] = useState("");
   const [newPassword, setNewPassword] = useState("");
+
+  const navigate = useNavigate();
+  const notificationDispatch = useNotificationDispatch();
 
   const resetRegisterForm = () => {
     setNewUsername("");
@@ -17,15 +23,26 @@ const Register = () => {
   const handleRegister = async (event) => {
     event.preventDefault();
 
-    try {
-      await userService.register({
-        newUsername,
-        newName,
-        newPassword,
+    if (!newPassword || !newName || !newPassword) {
+      notificationDispatch({
+        message: "Please fill in the form",
+        type: "failure",
       });
-      resetRegisterForm();
-    } catch (error) {
-      // notificationDispatch(error);
+    } else {
+      try {
+        await userService.register({
+          newUsername,
+          newName,
+          newPassword,
+        });
+        resetRegisterForm();
+        navigate("/login");
+        notificationDispatch({ message: "User created!", type: "success" });
+      } catch (error) {
+        if (error.response.data.error.includes("validation")) {
+          notificationDispatch({ message: "Username already taken!", type: "failure" });
+        }
+      }
     }
   };
 

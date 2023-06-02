@@ -9,7 +9,7 @@ const Notification = () => {
   }
 
   return (
-    <div className='container'>
+    <div className='notification-container'>
       <Alert color={info.type}>{info.message}</Alert>
     </div>
   );

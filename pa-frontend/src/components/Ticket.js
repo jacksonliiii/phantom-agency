@@ -19,7 +19,15 @@ const Ticket = () => {
       });
       queryClient.invalidateQueries("tickets");
     } catch (error) {
-      console.log(error);
+      if (error.response.data.error.includes("validation")) {
+        notificationDispatch({
+          message: `Please fill out the form before submitting.`,
+          type: "warning",
+        });
+      } else {
+        console.log(error);
+      }
+
     }
   };
 

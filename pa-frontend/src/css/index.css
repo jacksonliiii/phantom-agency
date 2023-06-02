@@ -1,20 +1,58 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Speigel&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Speigel&display=swap");
+
+.main {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 
 .home-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: white;
-    color: black;
-  }
-  
-  .home-title {
-    font-size: 3rem;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: white;
+  color: black;
+}
+
+.home-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.section-container {
+  margin-top: 500px;
+}
+
+.submit-ticket-button,
+.login-button,
+.register-button {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  font-weight: 600;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-width: 1px;
+  border-radius: 0.25rem;
+  transition: color 0.5s ease;
+}
+
+.submit-ticket-button:hover {
+  background-color: black;
+  color: #00f5d0;
+}
+
+.register-title {
+  text-align: left;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
