@@ -1,0 +1,48 @@
+.navbar {
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  display: flex;
+  font-family: "Speigel", sans-serif;
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-left: 2rem;
+}
+
+.nav-title {
+  margin-top: 0.4rem;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.nav-link {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #00f5d0;
+}
+
+.current-user {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}

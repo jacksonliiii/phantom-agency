@@ -14,20 +14,24 @@ const Tickets = () => {
   const tickets = ticketResult.data;
 
   return (
-    <div>
-      <h1>All Tickets</h1>
-      <div className='ticket-table'>
-        <table>
-          <tbody>
-            {tickets.map((ticket) => (
-              <tr key={ticket.id}>
-                <td>
-                  {ticket.type} {ticket.description}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <div className="flex justify-center">
+      <div className="w-3/4">
+        <h1 className="text-center text-3xl font-bold mb-4 border-b-2 pb-2">
+          All Tickets
+        </h1>
+        <div className="ticket-table border rounded-lg overflow-hidden">
+          <table className="w-full">
+            <tbody>
+              {tickets.map((ticket) => (
+                <tr key={ticket.id}>
+                  <td>
+                    <b className="uppercase">{ticket.type}</b> {ticket.description}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

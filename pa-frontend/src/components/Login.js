@@ -5,14 +5,14 @@ import loginService from "../services/login";
 import ticketService from "../services/ticket";
 
 import { useUserDispatch } from "./contexts/UserContext";
-// import { useNotificationDispatch } from "./contexts/NotificationContext";
+import { useNotificationDispatch } from "./contexts/NotificationContext";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const userDispatch = useUserDispatch();
-  // const notificationDispatch = useNotificationDispatch();
+  const notificationDispatch = useNotificationDispatch();
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -28,8 +28,9 @@ const Login = () => {
       userDispatch(user);
       setUsername("");
       setPassword("");
+      notificationDispatch({ message: "Logged in", type: "success" });
     } catch (error) {
-      // notificationDispatch(error);
+      notificationDispatch({ message: error, type: "failure" });
     }
   };
 

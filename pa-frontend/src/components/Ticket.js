@@ -15,7 +15,7 @@ const Ticket = () => {
       await ticketService.create(ticketObject);
       notificationDispatch({
         message: `Your ticket has been submitted`,
-        type: "info",
+        type: "success",
       });
       queryClient.invalidateQueries("tickets");
     } catch (error) {

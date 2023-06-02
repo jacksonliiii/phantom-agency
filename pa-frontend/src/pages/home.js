@@ -2,8 +2,8 @@ import React from "react";
 
 const HomePage = () => {
   return (
-    <div>
-      <h1>Welcome to Phantom Agency!</h1>
+    <div className='home-container'>
+      <h1 className='home-title'>Welcome to the Phantom Agency.</h1>
     </div>
   );
 };

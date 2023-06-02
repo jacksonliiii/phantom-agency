@@ -15,6 +15,7 @@ import Ticket from "./components/Ticket";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Footer from "./components/Footer";
+import Notification from "./components/Notification";
 
 import {
   useUserValue,
@@ -36,6 +37,7 @@ const App = () => {
       userDispatch(user);
       ticketService.setToken(user.token);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleLogout = async (event) => {
@@ -45,6 +47,10 @@ const App = () => {
       window.localStorage.removeItem("loggedUser");
       ticketService.setToken("");
       userDispatch(null);
+      notificationDispatch({
+        message: `Logged out of ${userValue.username}`,
+        type: "success",
+      });
     } catch (error) {
       notificationDispatch({
         message: error,
@@ -54,10 +60,11 @@ const App = () => {
   };
 
   return (
-    <div className='app-container'>
+    <div className='container'>
+      <Notification />
       <Router>
         <div>
-          <NavBar handleLogout={handleLogout} user={userValue}/>
+          <NavBar handleLogout={handleLogout} user={userValue} />
         </div>
         <div>
           <Routes>

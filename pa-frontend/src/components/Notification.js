@@ -1,4 +1,5 @@
-import { useNotificationValue } from "./NotificationContext";
+import { Alert } from "flowbite-react";
+import { useNotificationValue } from "./contexts/NotificationContext";
 
 const Notification = () => {
   const info = useNotificationValue();
@@ -7,19 +8,9 @@ const Notification = () => {
     return;
   }
 
-  const style = {
-    color: info.type === "error" ? "red" : "green",
-    background: "lightgrey",
-    fontSize: 20,
-    borderStyle: "solid",
-    borderRadius: 5,
-    padding: 10,
-    marginBottom: 10,
-  };
-
   return (
-    <div style={style} className="notification">
-      {info.message}
+    <div className='container'>
+      <Alert color={info.type}>{info.message}</Alert>
     </div>
   );
 };

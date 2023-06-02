@@ -4,6 +4,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.js";
 
+import "./css/index.css"
+import "./css/navbar.css"
+import "./css/footer.css"
+import "./css/tickets.css"
+import "./css/login.css"
+
 import { QueryClient, QueryClientProvider } from "react-query";
 import { NotificationContextProvider } from "./components/contexts/NotificationContext";
 import { UserContextProvider } from "./components/contexts/UserContext";

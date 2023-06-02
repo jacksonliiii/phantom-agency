@@ -18,40 +18,47 @@ const TicketPage = ({ createTicket }) => {
     });
     resetForm();
   };
+
   return (
-    <div>
-      <b>Make A Request</b>
-      <div className='ticket-form-div'>
+    <div className="flex justify-center items-center h-screen">
+      <div className="ticket-form-div">
         <form onSubmit={addTicket}>
-          <div>
+          <div className="mb-4">
+            <label htmlFor="request-type" className="text-lg font-bold mb-2">
+              Request Type
+            </label>
             <select
-              name='Request Type'
+              name="Request Type"
               value={newType}
               onChange={({ target }) => {
                 setNewType(target.value);
               }}
               required
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             >
-              <option value='default'>Select type of request...</option>
-              <option value='sighting'>Phantom sighting</option>
-              <option value='possession'>Phantom possession</option>
-              <option value='misc'>Other</option>
+              <option value="default">Select type of request...</option>
+              <option value="sighting">Phantom sighting</option>
+              <option value="possession">Phantom possession</option>
+              <option value="misc">Other</option>
             </select>
           </div>
-          <div>
-            <b>Description</b>{" "}
+          <div className="mb-4">
+            <label htmlFor="description" className="text-lg font-bold mb-2">
+              Description
+            </label>
             <input
-              type='text'
+              type="text"
               value={newDescription}
-              name='description'
+              name="description"
               onChange={({ target }) => {
                 setNewDescription(target.value);
               }}
-              placeholder='Enter description here...'
-              id='description'
+              placeholder="Enter description here..."
+              id="description"
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             />
           </div>
-          <button type='submit'>Submit Ticket</button>
+          <button type="submit">Submit Ticket</button>
         </form>
       </div>
     </div>
